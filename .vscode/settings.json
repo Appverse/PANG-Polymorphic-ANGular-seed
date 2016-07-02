@@ -1,0 +1,18 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/*.css": {
+      "when": "$(basename).scss"
+    },
+    "**/*.js.map": false,
+    "platforms": false,
+    "lib": false,
+    "node_modules": false,
+    "hooks": false,
+    "typings": false,
+    "server/typings": false
+  }
+}
