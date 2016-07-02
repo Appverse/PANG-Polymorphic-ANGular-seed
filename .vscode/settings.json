@@ -7,12 +7,12 @@
     "**/*.css": {
       "when": "$(basename).scss"
     },
-    "**/*.js.map": false,
-    "platforms": false,
-    "lib": false,
-    "node_modules": false,
-    "hooks": false,
-    "typings": false,
-    "server/typings": false
+    "**/*.js.map": true,
+    "platforms": true,
+    "lib": true,
+    "node_modules": true,
+    "hooks": true,
+    "typings": true,
+    "server/typings": true
   }
 }
