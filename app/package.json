@@ -1,0 +1,9 @@
+{
+	"nativescript": {
+		"id": "com.gft.shopshop"
+	},
+	"main": "main.tns.js",
+	"android": {
+		"v8Flags": "--expose_gc"
+	}
+}
