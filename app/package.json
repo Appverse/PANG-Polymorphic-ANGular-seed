@@ -1,0 +1,9 @@
+{
+	"nativescript": {
+		"id": "com.monomorphic-angular2-seed"
+	},
+	"main": "main.tns.js",
+	"android": {
+		"v8Flags": "--expose_gc"
+	}
+}
