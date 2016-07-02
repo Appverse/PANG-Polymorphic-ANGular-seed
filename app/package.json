@@ -1,6 +1,6 @@
 {
 	"nativescript": {
-		"id": "com.gft.shopshop"
+		"id": "com.monomorphic-angular2-seed"
 	},
 	"main": "main.tns.js",
 	"android": {
