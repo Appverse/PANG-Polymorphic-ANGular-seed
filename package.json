@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "./src",
 	"nativescript": {
-		"id": "com.monomorphic-angular2-seed",
+		"id": "com.monomorphic.angular2seed",
 		"tns-android": {
 			"version": "2.1.1"
 		},
