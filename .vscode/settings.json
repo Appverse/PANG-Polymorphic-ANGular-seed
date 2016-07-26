@@ -11,8 +11,6 @@
     "platforms": true,
     "lib": true,
     "node_modules": true,
-    "hooks": true,
-    "typings": true,
-    "server/typings": true
+    "hooks": true
   }
 }

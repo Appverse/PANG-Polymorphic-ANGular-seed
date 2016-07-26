@@ -1,67 +1,59 @@
-let express = require('express')
-let request = require('request')
-let bodyParser = require('body-parser')
-var multer = require('multer');
-var upload = multer(); // for parsing multipart/form-data
+import {models, Routes} from '../common'
+let express = require('express');
+let cors = require('cors');
 
 export let app = express();
 
-app.route('/api/products')
-    .get((req, res) => {
-        res.status(200).json([
+app.use(cors());
+configureApp(app);
+
+let products: models.Product[] = [
             {
-                name: 'Mufasa',
-                age: 2
+                id: 1,
+                name: 'Product 1',
+                description: 'Description of product 1',
+                price: 23.45
             }, {
-                name: 'Simba',
-                age: 12
+                id: 2,
+                name: 'Product 2',
+                description: 'Description of product 2',
+                price: 12.35
             }, {
-                name: 'Kitty',
-                age: 12
-            }]);
+                id: 3,
+                name: 'Product 3',
+                description: 'Description of product 3',
+                price: 34.10
+            }];
+
+
+app.route(Routes.PRODUCTS_LIST)
+    .get((req, res) => {
+        res.json(products);
     });
 
-/** Express specifics */
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.route(Routes.PRODUCT_DETAIL)
+    .get((req, res) => {
+        let result = products.filter(product => product.id == req.params.id)
+        if (result[0]) {
+            res.json(result[0]);
+        } else {
+            res.status(404).send('No such product');
+        }
+    });
 
-//CORS middleware
-let allowCrossDomain = (req, res, next) => {
-    var oneof = false;
-    if (req.headers.origin) {
-        res.header('Access-Control-Allow-Origin', req.headers.origin);
-        oneof = true;
-    }
-    if (req.headers['access-control-request-method']) {
-        res.header('Access-Control-Allow-Methods', req.headers['access-control-request-method']);
-        oneof = true;
-    }
-    if (req.headers['access-control-request-headers']) {
-        res.header('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
-        oneof = true;
-    }
-    if (oneof) {
-        res.header('Access-Control-Max-Age', 60 * 60 * 24 * 365);
-    }
 
-    // intercept OPTIONS method
-    if (oneof && req.method == 'OPTIONS') {
-        res.sendStatus(200);
-    }
-    else {
+//__________________________________________//
+/** Express specifics - nothing interesting*/
+
+function configureApp(app) {
+    let bodyParser = require('body-parser')
+    app.use(bodyParser.json()); // for parsing application/json
+    app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+    //Logs time since epoch + method + url
+    let timeLog = (req, res, next) => {
+        console.log(Date.now(), req.method, req.path);
         next();
     }
+    app.use(timeLog);
 }
-app.use(allowCrossDomain);
-
-//Logs time since epoch + method + url
-let timeLog = (req, res, next) => {
-    console.log(Date.now(), req.method, req.path);
-    next();
-}
-app.use(timeLog);
-
-
-
-
-

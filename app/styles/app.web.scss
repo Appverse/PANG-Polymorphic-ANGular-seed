@@ -1,5 +1,9 @@
-@import 'styles/_variables.scss';
+/*
+    This file is imported from app/app.scss in webapp mode
+*/
 
+@import 'styles/_variables.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 h1 {
-    color: $primary-color;
+    color: $brand-color;
 }

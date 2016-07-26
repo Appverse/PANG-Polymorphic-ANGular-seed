@@ -1,0 +1,52 @@
+
+// @keyframes open-sidedrawer {
+//     0% { transform: translate(-130, 0) }
+//     100% { transform: translate(0, 0) }
+// }
+
+// .open-sidedrawer {
+//     animation-name: open-sidedrawer;
+//     animation-duration: .500;
+//     animation-fill-mode: forwards;
+//     animation-iteration-count: 1;
+//     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+// }
+
+// @keyframes open-backdrop {
+//     0% { opacity: 0}
+//     100% { opacity: 0.3 }
+// }
+
+// .open-backdrop {
+//     animation-name: open-backdrop;
+//     animation-duration: .500;
+//     animation-fill-mode: forwards;
+//     animation-iteration-count: 1;
+//     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+// }
+
+// @keyframes close-sidedrawer {
+//     0% { transform: translate(0, 0) }
+//     100% { transform: translate(-130, 0) }
+// }
+
+// .close-sidedrawer {
+//     animation-name: close-sidedrawer;
+//     animation-duration: .500;
+//     animation-fill-mode: forwards;
+//     animation-iteration-count: 1;
+//     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+// }
+
+// @keyframes close-backdrop {
+//     0% { opacity: 0.3}
+//     100% { opacity: 0 }
+// }
+
+// .close-backdrop {
+//     animation-name: close-backdrop;
+//     animation-duration: .500;
+//     animation-fill-mode: forwards;
+//     animation-iteration-count: 1;
+//     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+// }

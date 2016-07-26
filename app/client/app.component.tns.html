@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<StackLayout>
+    <Button (tap)="toggled = !toggled" #menuIcon text="Menu"></Button>
+    <page-router-outlet>
+        <mono-menu [toggled]="toggled"></mono-menu>
+    </page-router-outlet>
+</StackLayout>

@@ -1,20 +1,41 @@
 import {Component} from "@angular/core";
-import {RouterConfig, ROUTER_DIRECTIVES} from '@angular/router';
+import {RouterConfig} from '@angular/router';
 import {HTTP_PROVIDERS} from "@angular/http";
 
-import {ProductsPage} from "./pages/products/products.component";
+import {SampleService} from './services/sample.service';
+
+import {MenuComponent} from "./components/menu/menu.component.tns";
+
+import {HomeComponent} from "./pages/home/home.component";
+import {ProductsComponent} from "./pages/products/products.component";
+
 
 @Component({
     moduleId: module.id,
-    selector: "my-app",
-    directives: [ROUTER_DIRECTIVES],
-    templateUrl: "app.component.tns.html",
-    styleUrls: ['app.component.tns.css'],
+    selector: "mono-app",
+    directives: [MenuComponent],
+    providers: [SampleService],
+    templateUrl: "app.component.tns.html"
 })
 export class AppComponent {
+    constructor() {
+        AppComponent.hideActionBarInAndroid();
+    }
+
+    private static hideActionBarInAndroid() {
+        if (!global.web) { // global.web is defined during compile time in webpack, making this code unreachable in WEB.
+            try {
+                let topmost = require("ui/frame").topmost();
+                topmost.currentPage.actionBarHidden = true;
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    }
 }
 
 export const APP_ROUTES: RouterConfig = [
-    { path: '', redirectTo: '/products', terminal: true },
-    { path: "products", component: ProductsPage }
+    { path: '', redirectTo: '/home', terminal: true},
+    { path: "home", component: HomeComponent},
+    { path: "products", component: ProductsComponent}
 ]

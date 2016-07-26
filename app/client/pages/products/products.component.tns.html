@@ -1,0 +1,13 @@
+<StackLayout>
+    <Label [text]="title" class="h1"></Label>
+    <Label [text]="description" class="h2"></Label>
+    <Label *ngIf="loadedProduct" text="Loaded product: {{loadedProduct.name}}"></Label>
+    <StackLayout *ngFor="let product of products" #productElement>
+        <Label [text]="product.name"></Label>
+        <Label [text]="product.description"></Label>
+        <Label [text]="product.price | currency:'EUR'"></Label>
+
+        <Button (tap)="select(product)" text="Load"></Button>
+        <Button (tap)="remove(product, $event)" text="Destroy!"></Button>
+    </StackLayout>
+</StackLayout>

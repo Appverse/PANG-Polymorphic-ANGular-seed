@@ -1,9 +1,11 @@
+/*
+    This is the SERVER entry point.
+    A simple express-driven API
+*/
+
 import {app} from './server/app';
 
-let packageJson = require('../package.json');
-
 let port = 3000;
-
 app.listen(port, () => {
-  console.log(`${packageJson.name} app listening on port ${port}`);
+  console.log(`API running on port ${port}`);
 });

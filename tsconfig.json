@@ -10,8 +10,7 @@
     },
     "exclude": [
         "node_modules",
-        "platforms",
-        "server"
+        "platforms"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useWebpackText": true
