@@ -10,4 +10,8 @@ export class MenuComponent extends CommonMenuComponent {
     constructor() {
         super();
     }
+
+    methodToImplement(stringArgument: string) {
+
+    };
 }

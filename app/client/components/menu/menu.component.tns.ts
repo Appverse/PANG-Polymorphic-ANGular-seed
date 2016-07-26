@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {RouterConfig, ActivatedRoute, ROUTER_DIRECTIVES, Router} from '@angular/router';
-import {CommonMenuComponent} from './menu.component.common'
+import {CommonMenuComponent} from './menu.component.common';
 
 @Component({
     moduleId: module.id,
@@ -13,9 +13,8 @@ export class MenuComponent extends CommonMenuComponent {
     @Input() public toggled: boolean;
     @Output() close = new EventEmitter();
 
-    constructor(private _router: Router) { }
-
-    ngOnInit() {
+    constructor(private _router: Router) {
+        super();
     }
 
     public menuItemTap(link) {
@@ -25,5 +24,8 @@ export class MenuComponent extends CommonMenuComponent {
         this.toggled = false;
     }
 
+    methodToImplement(stringArgument: string) {
+
+    };
 
 }
