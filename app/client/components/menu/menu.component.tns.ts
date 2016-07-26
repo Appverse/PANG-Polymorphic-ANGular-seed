@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {RouterConfig, ActivatedRoute, ROUTER_DIRECTIVES, Router} from '@angular/router';
+import {CommonMenuComponent} from './menu.component.common'
 
 @Component({
     moduleId: module.id,
@@ -7,7 +8,7 @@ import {RouterConfig, ActivatedRoute, ROUTER_DIRECTIVES, Router} from '@angular/
     templateUrl: 'menu.component.tns.html',
     styleUrls: ['menu.component.tns.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent extends CommonMenuComponent {
 
     @Input() public toggled: boolean;
     @Output() close = new EventEmitter();

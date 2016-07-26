@@ -1,6 +1,6 @@
 <StackLayout>
-    <Button (tap)="toggled = !toggled" #menuIcon text="Menu"></Button>
     <page-router-outlet>
+        <Button (tap)="toggled = !toggled" #menuIcon text="Menu"></Button>
         <mono-menu [toggled]="toggled"></mono-menu>
     </page-router-outlet>
 </StackLayout>
