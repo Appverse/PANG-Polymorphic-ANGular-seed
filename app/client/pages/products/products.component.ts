@@ -8,7 +8,6 @@ import {SampleService} from '../../services/sample.service';
     moduleId: module.id,
     selector: "my-products",
     templateUrl: 'products.component.tns.html',
-    styleUrls: ['products.component.tns.css']
 })
 export class ProductsComponent {
 
