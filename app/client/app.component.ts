@@ -1,11 +1,13 @@
 import {Component} from "@angular/core";
 import {RouterConfig} from '@angular/router';
-import {HTTP_PROVIDERS} from "@angular/http";
 
+// Shared service
 import {SampleService} from './services/sample.service';
 
+// Platform dependent component (.tns replaced by .web)
 import {MenuComponent} from "./components/menu/menu.component.tns";
 
+// Multiplatform components
 import {HomeComponent} from "./pages/home/home.component";
 import {ProductsComponent} from "./pages/products/products.component";
 
