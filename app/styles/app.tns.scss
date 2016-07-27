@@ -5,5 +5,49 @@
 @import 'styles/_variables.scss';
 
 .h1 {
-    color: $brand-color;
+    font-size: 30;
+}
+
+.h2 {
+    font-size: 15;
+}
+
+.action-bar{
+        color: $light-brand-color;
+        background-color: $brand-color;
+}
+
+.page{
+    background-color: $dark-bg;
+    color: $light-font;
+}
+
+.product{
+    background-color: $light-bg;
+    color: $dark-font;
+    margin: 2;
+    border-radius: 10;
+    padding: 10;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.button{
+    background-color: transparent;
+    color: $light-brand-color;
+    border-radius: 10;
+    border-color: $light-brand-color;
+    border-width: 2;
+    margin: 2;
+}
+
+.product-button{
+    background-color: transparent;
+    color: $dark-font;
+    border-radius: 10;
+    border-color: $dark-bg;
+    border-width: 2;
+    margin: 2;
 }

@@ -1,6 +1,8 @@
-<StackLayout>
-    <page-router-outlet>
-        <Button (tap)="toggled = !toggled" text="Menu"></Button>
-        <mono-menu [toggled]="toggled"></mono-menu>
-    </page-router-outlet>
-</StackLayout>
+<GridLayout>
+    <GridLayout rows="auto,*" class="page">
+        <mono-menu></mono-menu>
+        <GridLayout row="1">
+            <router-outlet></router-outlet>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

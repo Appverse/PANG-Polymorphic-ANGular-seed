@@ -11,7 +11,7 @@ import {SampleService} from '../../services/sample.service';
 })
 export class ProductsComponent {
 
-    private title: string = "Products";
+    private title: string = "Products List";
     private description: string = "API routes and interfaces are shared between server and clients";
 
     private products: models.Product[];

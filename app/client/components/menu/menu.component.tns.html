@@ -1,10 +1,5 @@
-<AbsoluteLayout *ngIf="toggled" row="1" width="100%" height="100%">
-    <!-- SIDE DRAWER -->
-    <GridLayout class="backdrop open-backdrop" width="100%" height="100%" (tap)="close.emit(false)"></GridLayout>
-    <GridLayout left="0" class="sideDrawer open-sidedrawer">
-        <StackLayout>
-            <Button (tap)="menuItemTap('home')" text="Home"></Button>
-            <Button (tap)="menuItemTap('products')" text="Products"></Button>
-        </StackLayout>
-    </GridLayout>
-</AbsoluteLayout>
+<GridLayout columns="*,*" height="50">
+        <Button #homeButton col="0" [nsRouterLink]="['/home']" text="Home" [class]="isRouterLinkActive('/home') ? 'menu-button-selected' : 'menu-button'"></Button>
+        <Button #productsButton col="1" [nsRouterLink]="['/products']" text="Products" [class]="isRouterLinkActive('/products') ? 'menu-button-selected' : 'menu-button'"></Button>
+</GridLayout>
+

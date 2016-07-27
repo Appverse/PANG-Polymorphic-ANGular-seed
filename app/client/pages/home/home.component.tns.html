@@ -1,6 +1,12 @@
-<StackLayout>
-    <Label [text]="title" class="h1"></Label>
-    <Label [text]="description" class="h2"></Label>
-    <Label text="Navigation is shared.." class="h2"></Label>
-    <Button [nsRouterLink]="['/products']" text="Let's go to next page!"></Button>
-</StackLayout>
+<GridLayout rows="*,9*">
+    <GridLayout row="0" columns="*,6*,*" class="action-bar">
+        <Label col="1" [text]="title" class="h1 bold" verticalAlignment="center"></Label>
+    </GridLayout>
+    <GridLayout row="1" rows="*,*" padding="5" class="page">
+        <StackLayout row="0">
+            <Label [text]="description" textWrap="true" class="h2"></Label>
+            <Label text="Navigation is shared.." class="h2"></Label>
+        </StackLayout>
+        <Button row="1" [nsRouterLink]="['/products']" text="Let's go to next page!" class="button" height="50" width="60%"></Button>
+    </GridLayout>
+</GridLayout>

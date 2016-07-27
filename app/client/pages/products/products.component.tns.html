@@ -1,13 +1,27 @@
-<StackLayout>
-    <Label [text]="title" class="h1"></Label>
-    <Label [text]="description" class="h2"></Label>
-    <Label *ngIf="loadedProduct" text="Loaded product: {{loadedProduct.name}}"></Label>
-    <StackLayout *ngFor="let product of products" #productElement>
-        <Label [text]="product.name"></Label>
-        <Label [text]="product.description"></Label>
-        <Label [text]="product.price | currency:'EUR'"></Label>
+<GridLayout rows="*,9*">
+    <GridLayout row="0" columns="*,6*,*" class="action-bar">
+        <Label col="1" [text]="title" class="h1 bold" verticalAlignment="center"></Label>
+    </GridLayout>
+    <GridLayout row="1" padding="5" class="page">
+        <StackLayout>
+            <Label [text]="description" class="h2" textWrap="true"></Label>
+            <Label *ngIf="loadedProduct" text="Loaded product: {{loadedProduct.name}}"></Label>
+            <GridLayout>
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout *ngFor="let product of products" #productElement class="product">
+                            <GridLayout rows="*,*" columns="*,auto" marginBottom="10">
+                                <Label row="0" col="0" [text]="product.name" margin="5" class="h2 bold"></Label>
+                                <Label row="1" col="0" [text]="product.description" margin="5" class="h2"></Label>
+                                <Label row="0" col="1" [text]="product.price | currency:'EUR'" margin="5" class="h2"></Label>
+                            </GridLayout>
+                            <Button (tap)="select(product)" text="Load" class="product-button"></Button>
+                            <Button (tap)="remove(product, $event)" text="Destroy!" class="product-button"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</GridLayout>
 
-        <Button (tap)="select(product)" text="Load"></Button>
-        <Button (tap)="remove(product, $event)" text="Destroy!"></Button>
-    </StackLayout>
-</StackLayout>
