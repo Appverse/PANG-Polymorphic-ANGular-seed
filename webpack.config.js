@@ -12,9 +12,7 @@ var webpackConfig = {
 
     plugins: [
         new webpack.DefinePlugin({
-            'mono': {
-                'web': true
-            }
+            'webapp' : true
         })
     ],
 
