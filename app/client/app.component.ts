@@ -25,7 +25,7 @@ export class AppComponent {
     }
 
     private static hideActionBarInAndroid() {
-        if (!webapp) { // global.web is defined during compile time in webpack, making this code unreachable in WEB.
+        if (!global.web) { // global.web is defined during compile time in webpack, making this code unreachable in WEB.
             try {
                 let topmost = require("ui/frame").topmost();
                 topmost.currentPage.actionBarHidden = true;

@@ -11,8 +11,12 @@ var webpackConfig = {
     },
 
     plugins: [
+        // On compile time, webpack will replace if(global.android){...} with if(false){...}
+        // marking the code as deade & unreachable, and though
+        // not importing nativescript packages declared inside these blocks
         new webpack.DefinePlugin({
-            'webapp' : true
+            'global.web' : true,
+            'global.android' : false
         })
     ],
 
