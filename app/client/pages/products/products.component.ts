@@ -32,7 +32,7 @@ export class ProductsComponent {
      * global.android and global.web can help implement small platform specific logic
      */
     remove(product: models.Product, event?: any) {
-        if (global.android) {
+        if (!mono.web && global.android) {
             let explosion = require('nativescript-explosionfield');
             explosion.explode(event.object._parent._parent);
             setTimeout(() => {

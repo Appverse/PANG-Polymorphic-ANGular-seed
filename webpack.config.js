@@ -12,9 +12,8 @@ var webpackConfig = {
 
     plugins: [
         new webpack.DefinePlugin({
-            'global': {
-                'web': true,
-                'android': false
+            'mono': {
+                'web': true
             }
         })
     ],
@@ -49,6 +48,7 @@ var webpackConfig = {
 var defaultConfig = {
     devtool: 'cheap-module-source-map',
     cache: true,
+    debug: true,
     output: {
         filename: '[name].bundle.js',
         sourceMapFilename: '[name].map',
