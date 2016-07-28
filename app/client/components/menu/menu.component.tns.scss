@@ -52,18 +52,33 @@
 //     animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 // }
 
-
-
 .menu-button{
     background-color: transparent;
-    color: $brand-color;
+    color: $dark-font;
     border-color: transparent;
+    border-width: 1;
+    border-radius: 1;
     height: 50;
 }
 
-.menu-button-selected{
-    background-color: $brand-color;
-    color: $light-brand-color;
-    border-color: transparent;
-    height: 50;
+.unselected{
+    animation-name: selected;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+.selected{
+    animation-name: selected;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes selected {
+    	from{
+                    opacity: .5;
+        }
+        100%{
+                    opacity: 1;
+        }
 }

@@ -18,8 +18,8 @@
 }
 
 .page{
-    background-color: $dark-bg;
-    color: $light-font;
+    background-color: $light-bg;
+    color: $dark-font;
 }
 
 .product{
@@ -36,9 +36,9 @@
 
 .button{
     background-color: transparent;
-    color: $light-brand-color;
+    color: $dark-font;
     border-radius: 10;
-    border-color: $light-brand-color;
+    border-color: $dark-bg;
     border-width: 2;
     margin: 2;
 }
