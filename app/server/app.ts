@@ -23,15 +23,30 @@ let products: models.Product[] = [
                 name: 'Product 3',
                 description: 'Description of product 3',
                 price: 34.10
+            },{
+                id: 4,
+                name: 'Product 4',
+                description: 'Description of product 4',
+                price: 23.45
+            }, {
+                id: 5,
+                name: 'Product 5',
+                description: 'Description of product 5',
+                price: 12.35
+            }, {
+                id: 6,
+                name: 'Product 6',
+                description: 'Description of product 6',
+                price: 34.10
             }];
 
 
-app.route(Routes.PRODUCTS_LIST)
+app.route(Routes.PRODUCTS_LIST.url)
     .get((req, res) => {
         res.json(products);
     });
 
-app.route(Routes.PRODUCT_DETAIL)
+app.route(Routes.PRODUCT_DETAIL.url)
     .get((req, res) => {
         let result = products.filter(product => product.id == req.params.id)
         if (result[0]) {

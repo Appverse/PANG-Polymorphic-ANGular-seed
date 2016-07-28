@@ -1,8 +1,11 @@
 export let Routes = {
-    PRODUCTS_LIST: '/api/products',
-    PRODUCT_DETAIL: '/api/products/:id'
-}
-
-export let RouteParams = {
-    ID: ':id'
+    PRODUCTS_LIST: {
+        url: '/api/products'
+    },
+    PRODUCT_DETAIL: {
+        url: '/api/products/:id',
+        params: {
+            id: ':id'
+        }
+    }
 }

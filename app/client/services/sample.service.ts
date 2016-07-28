@@ -1,7 +1,7 @@
 import {Injectable, Inject} from "@angular/core";
 import {Http, Headers, RequestOptions} from "@angular/http"
 import * as Rx from "rxjs";
-import {models, Routes, RouteParams} from "../../common"
+import {models, Routes} from "../../common"
 import {Config} from '../app.config'
 
 @Injectable()
@@ -13,14 +13,14 @@ export class SampleService {
 
     public getProducts(): Rx.Observable<models.Product[]> {
         return this._http
-            .get(this.generateApiUrl(Routes.PRODUCTS_LIST))
+            .get(this.generateApiUrl(Routes.PRODUCTS_LIST.url))
             .map(response => response.json())
             .catch(this.handleError);
     }
 
     public getProduct(id: number): Rx.Observable<models.Product> {
         return this._http
-            .get(this.generateApiUrl(Routes.PRODUCT_DETAIL, [{ key: RouteParams.ID, value: id }]))
+            .get(this.generateApiUrl(Routes.PRODUCT_DETAIL.url, [{ key: Routes.PRODUCT_DETAIL.params.id, value: id }]))
             .map(response => response.json())
             .catch(this.handleError);
     }

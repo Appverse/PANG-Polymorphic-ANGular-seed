@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-md-4" *ngFor="let product of products">
-            <div class="card">
+            <div class="card product">
                 <div class="card-block row">
                     <div class="col-md-7">
                         <h4 class="card-title">{{product.name}}</h4>
@@ -18,8 +18,8 @@
 
                 <div class="card-block text-sm-right">
                     <p>{{product.price | currency:'EUR'}}</p>
-                    <a (click)="select(product)" class="btn button">Load</a>
-                    <a (click)="remove(product)" class="btn button-rm">Remove</a>
+                    <button (click)="select(product)" class="btn button">Load</button>
+                    <button (click)="remove(product)" class="btn button-rm">Remove</button>
                 </div>
             </div>
         </div>

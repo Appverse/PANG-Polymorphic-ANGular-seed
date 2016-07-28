@@ -34,7 +34,7 @@ export class ProductsComponent {
     remove(product: models.Product, event?: any) {
         if (global.android) {
             let explosion = require('nativescript-explosionfield');
-            explosion.explode(event.object._parent);
+            explosion.explode(event.object._parent._parent);
             setTimeout(() => {
                 this.removeProduct.call(this, product.id);
             }, 500);

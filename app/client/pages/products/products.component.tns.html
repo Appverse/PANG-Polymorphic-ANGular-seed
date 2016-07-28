@@ -15,8 +15,10 @@
                                 <Label row="1" col="0" [text]="product.description" margin="5" class="h2"></Label>
                                 <Label row="0" col="1" [text]="product.price | currency:'EUR'" margin="5" class="h2"></Label>
                             </GridLayout>
-                            <Button (tap)="select(product)" text="Load" class="product-button"></Button>
-                            <Button (tap)="remove(product, $event)" text="Destroy!" class="product-button"></Button>
+                            <StackLayout orientation="horizontal" padding="5" >
+                                <Button (tap)="select(product)" text="Load" class="product-button" width="50%"></Button>
+                           	    <Button (tap)="remove(product, $event)" text="Destroy!" class="product-button" width="50%"></Button>
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
