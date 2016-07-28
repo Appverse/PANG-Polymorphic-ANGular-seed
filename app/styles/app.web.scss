@@ -8,18 +8,56 @@ h1 {
     color: $brand-color;
 }
 
-// .home-div{
-//     background-color: $light-bg;
-// }
+.button{
+    padding: 10px;
+    background-color: transparent;
+    color: $brand-color;
+    border: 2px solid $brand-color;
+    border-radius: 5px;
+}
 
-// .button{
-//     background-color: transparent;
-//     color: $light-font;
-//     border-radius: 10;
-//     border-color: $light-font;
-//     border-width: 2;
-// }
+.button:hover{
+    padding: 10px;
+    background-color: $brand-color;
+    color: $light-font;
+    border: 2px solid $brand-color;
+    border-radius: 5px;
+}
 
-// .page{
-//     background-color: $dark-bg;
-// }
+.button:active{
+    padding: 10px;
+    background-color: $dark-brand-color;
+    color: $light-font;
+    border: 2px solid $dark-brand-color;
+    border-radius: 5px;
+}
+
+.button-rm{
+    padding: 10px;
+    background-color: transparent;
+    color: $dark-brand-color;
+    border: 2px solid $dark-brand-color;
+    border-radius: 5px;
+}
+
+.button-rm:hover{
+    padding: 10px;
+    background-color: $dark-brand-color;
+    color: $light-font;
+    border: 2px solid $dark-brand-color;
+    border-radius: 5px;
+}
+
+.button-rm:active{
+    padding: 10px;
+    background-color: $dark-bg;
+    color: $light-font;
+    border: 2px solid $dark-bg;
+    border-radius: 5px;
+}
+
+.navbar-custom-brand{
+    background-color: $brand-color;
+    color: $light-font;
+    border-radius: 0;
+}
