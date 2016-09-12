@@ -6,10 +6,8 @@ import { HttpModule } from "@angular/http";
 
 import {AppComponent, APP_ROUTES} from "./client/app.component";
 import {MenuComponent} from "./client/components/menu/menu.component.tns";
-
 import {HomeComponent} from "./client/pages/home/home.component";
 import {ProductsComponent} from "./client/pages/products/products.component";
-
 import {Config, WEB_CONFIG}    from './client/app.config';
 
 @NgModule({
