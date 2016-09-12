@@ -7,7 +7,8 @@
 
 android {  
   defaultConfig {  
-    generatedDensities = []  
+    generatedDensities = []
+    applicationId = "monomorphic.angular2.seed"  
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  

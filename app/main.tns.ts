@@ -1,21 +1,26 @@
-/*
-    This is the Nativescript entry point.
-    Nativescript engine loads this file as it's referenced in app/package.json as 'main'
-*/
-
-import {nativeScriptBootstrap} from "nativescript-angular/application"; // put as first import, or else...
-import {provide, PLATFORM_DIRECTIVES} from '@angular/core';
-import {nsProvideRouter, NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
-import {ROUTER_DIRECTIVES} from "@angular/router";
-import {NS_HTTP_PROVIDERS} from 'nativescript-angular/http';
+// this import should be first in order to load some required settings (like globals and reflect-metadata)
+import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
+import { NgModule } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 import {AppComponent, APP_ROUTES} from "./client/app.component";
+import {MenuComponent} from "./client/components/menu/menu.component.tns";
+import {HomeComponent} from "./client/pages/home/home.component";
+import {ProductsComponent} from "./client/pages/products/products.component";
 import {Config, TNS_CONFIG}    from './client/app.config';
 
-nativeScriptBootstrap(AppComponent, [
-    provide(Config, { useValue: TNS_CONFIG }),
-    nsProvideRouter(APP_ROUTES, { enableTracing: false }),
-    provide(PLATFORM_DIRECTIVES, { useValue: ROUTER_DIRECTIVES, multi: true }), 
-    provide(PLATFORM_DIRECTIVES, { useValue: NS_ROUTER_DIRECTIVES, multi: true }),
-    NS_HTTP_PROVIDERS
-]);
+@NgModule({
+    declarations: [AppComponent, MenuComponent, HomeComponent, ProductsComponent],
+    providers: [{ provide: Config, useValue: TNS_CONFIG }],
+    bootstrap: [AppComponent],
+    imports: [
+        NativeScriptModule,
+        NativeScriptHttpModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(APP_ROUTES)]
+})
+class AppComponentModule { }
+
+
+platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
