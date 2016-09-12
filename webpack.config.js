@@ -11,8 +11,12 @@ var webpackConfig = {
     },
 
     plugins: [
+        // On compile time, webpack will replace if(global.android){...} with if(false){...}
+        // marking the code as deade & unreachable, and though
+        // not importing nativescript packages declared inside these blocks
         new webpack.DefinePlugin({
-            'webapp' : true
+            'global.web': true,
+            'global.android': false
         })
     ],
 
@@ -24,7 +28,8 @@ var webpackConfig = {
                 query: {
                     multiple: [
                         { search: '.tns.s?css', replace: '.web.scss', flags: 'g' },
-                        { search: '.tns', replace: '.web', flags: 'g' }
+                        { search: '.tns', replace: '.web', flags: 'g' },
+                        { search: 'moduleId: module.id,', replace: '', flags: 'g' }
                     ]
                 }
             }

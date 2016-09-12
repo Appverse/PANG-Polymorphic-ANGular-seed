@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
-import {RouterConfig, ActivatedRoute, ROUTER_DIRECTIVES, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CommonMenuComponent} from './menu.component.common';
 
 @Component({
