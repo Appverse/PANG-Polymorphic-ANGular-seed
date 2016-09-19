@@ -28,7 +28,8 @@ var webpackConfig = {
                 query: {
                     multiple: [
                         { search: '.tns.s?css', replace: '.web.scss', flags: 'g' },
-                        { search: '.tns', replace: '.web', flags: 'g' }
+                        { search: '.tns', replace: '.web', flags: 'g' },
+                        { search: 'moduleId: module.id,', replace: '', flags: 'g' }
                     ]
                 }
             }

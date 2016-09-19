@@ -20,10 +20,10 @@ import {ProductsComponent} from "./pages/products/products.component";
 })
 export class AppComponent {
     constructor() {
-        AppComponent.hideActionBarInAndroid();
+        this.hideActionBarInAndroid();
     }
 
-    private static hideActionBarInAndroid() {
+    private hideActionBarInAndroid() {
         if (!global.web) { // global.web is defined during compile time in webpack, making this code unreachable in WEB.
             try {
                 let topmost = require("ui/frame").topmost();
@@ -36,7 +36,7 @@ export class AppComponent {
 }
 
 export const APP_ROUTES: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full'},
-    { path: "home", component: HomeComponent},
-    { path: "products", component: ProductsComponent}
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: "home", component: HomeComponent },
+    { path: "products", component: ProductsComponent }
 ]
