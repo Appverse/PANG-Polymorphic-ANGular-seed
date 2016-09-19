@@ -4,10 +4,10 @@
   "nativescript": {
     "id": "monomorphic.angular2.seed",
     "tns-android": {
-      "version": "2.4.0-next-2016-09-10-1135"
+      "version": "2.3.0"
     },
     "tns-ios": {
-      "version": "2.2.1"
+      "version": "2.3.0"
     }
   },
   "dependencies": {
