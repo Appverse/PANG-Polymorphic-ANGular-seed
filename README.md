@@ -1,4 +1,4 @@
-# Monomorphic Angular 2 seed
+# PANG: the Polymorphic ANGular seed
 
 ## Description
 

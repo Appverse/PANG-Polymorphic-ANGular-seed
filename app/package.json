@@ -1,6 +1,6 @@
 {
 	"nativescript": {
-		"id": "com.monomorphic-angular2-seed"
+		"id": "org.appverse.pang"
 	},
 	"main": "main.tns.js",
 	"android": {
