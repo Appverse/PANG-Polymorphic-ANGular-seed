@@ -1,11 +1,11 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: "home",
+    selector: 'pang-home',
     templateUrl: 'home.component.tns.html'
 })
 export class HomeComponent {
-    private title: string = "Monomorphic Seed";
-    private description: string = "A starter project to help build monomorphic applications in Angular 2 + typescript + nativescript";
+    title: string = 'Polymorphic Seed';
+    description: string = 'A starter project to help build polymorphic applications in Angular 2 + typescript + nativescript';
 }

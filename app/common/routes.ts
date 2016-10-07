@@ -8,4 +8,4 @@ export let Routes = {
             id: ':id'
         }
     }
-}
+};

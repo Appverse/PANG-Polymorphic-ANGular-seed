@@ -9,8 +9,8 @@ export class Config {
     SERVICES_URL: string;
 }
 
-let localhost_url = "http://localhost:3000";
-let android_emulator_url = "http://10.0.2.2:3000";
+let localhost_url = 'http://localhost:3000';
+let android_emulator_url = 'http://10.0.2.2:3000';
 
 export const TNS_CONFIG: Config = {
     SERVICES_URL: global.android ? android_emulator_url : localhost_url

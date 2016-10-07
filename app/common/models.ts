@@ -4,10 +4,10 @@
 
 export namespace models {
     export interface Product {
-        id: number,
-        name: string,
-        description?: string,
-        price: number,
-        state?:string
+        id: number;
+        name: string;
+        description?: string;
+        price: number;
+        state?: string;
     }
 }
