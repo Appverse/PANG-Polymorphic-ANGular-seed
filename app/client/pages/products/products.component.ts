@@ -1,21 +1,20 @@
-import {Component, ElementRef} from "@angular/core";
-import * as Rx from "rxjs";
-import {models} from "../../../common/models"
+import {Component, ElementRef} from '@angular/core';
+import {models} from '../../../common/models';
 
 import {SampleService} from '../../services/sample.service';
 
 @Component({
     moduleId: module.id,
-    selector: "my-products",
+    selector: 'pang-products',
     templateUrl: 'products.component.tns.html',
 })
 export class ProductsComponent {
 
-    private title: string = "Products List";
-    private description: string = "API routes and interfaces are shared between server and clients";
+    title: string = 'Products List';
+    description: string = 'API routes and interfaces are shared between server and clients';
 
-    private products: models.Product[];
-    private loadedProduct: models.Product;
+    products: models.Product[];
+    loadedProduct: models.Product;
 
     public constructor(private sampleService: SampleService) {
         sampleService.getProducts()
@@ -24,7 +23,7 @@ export class ProductsComponent {
 
     select(product: models.Product) {
         this.sampleService.getProduct(product.id)
-            .subscribe(product => this.loadedProduct = product);
+            .subscribe(loadedProduct => this.loadedProduct = loadedProduct);
     }
 
 
@@ -46,7 +45,7 @@ export class ProductsComponent {
 
 
     private removeProduct(id: number) {
-        for (var index = 0; index < this.products.length; index++) {
+        for (let index = 0; index < this.products.length; index++) {
             if (id === this.products[index].id) {
                 this.products.splice(index, 1);
             };

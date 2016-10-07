@@ -1,8 +1,8 @@
-import {Injectable, Inject} from "@angular/core";
-import {Http, Headers, RequestOptions} from "@angular/http"
-import * as Rx from "rxjs";
-import {models, Routes} from "../../common"
-import {Config} from '../app.config'
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import * as Rx from 'rxjs';
+import {models, Routes} from '../../common';
+import {Config} from '../app.config';
 
 @Injectable()
 export class SampleService {

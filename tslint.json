@@ -105,6 +105,10 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+
+    "directive-selector-prefix": [true, "pang"],
+    "component-selector-prefix": [true, "pang"],
+    "pipe-naming": [true, "camelCase", "pang"]
   }
 }

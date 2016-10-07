@@ -1,4 +1,4 @@
-import {models, Routes} from '../common'
+import {models, Routes} from '../common';
 let express = require('express');
 let cors = require('cors');
 
@@ -23,7 +23,7 @@ let products: models.Product[] = [
                 name: 'Product 3',
                 description: 'Description of product 3',
                 price: 34.10
-            },{
+            }, {
                 id: 4,
                 name: 'Product 4',
                 description: 'Description of product 4',
@@ -48,7 +48,7 @@ app.route(Routes.PRODUCTS_LIST.url)
 
 app.route(Routes.PRODUCT_DETAIL.url)
     .get((req, res) => {
-        let result = products.filter(product => product.id == req.params.id)
+        let result = products.filter(product => product.id === parseInt(req.params.id, 10));
         if (result[0]) {
             res.json(result[0]);
         } else {
@@ -57,18 +57,18 @@ app.route(Routes.PRODUCT_DETAIL.url)
     });
 
 
-//__________________________________________//
+// __________________________________________//
 /** Express specifics - nothing interesting*/
 
 function configureApp(app) {
-    let bodyParser = require('body-parser')
+    let bodyParser = require('body-parser');
     app.use(bodyParser.json()); // for parsing application/json
     app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-    //Logs time since epoch + method + url
+    // Logs time since epoch + method + url
     let timeLog = (req, res, next) => {
         console.log(Date.now(), req.method, req.path);
         next();
-    }
+    };
     app.use(timeLog);
 }

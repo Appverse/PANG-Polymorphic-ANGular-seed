@@ -51,7 +51,7 @@ var webpackConfig = {
 var defaultConfig = {
     devtool: 'cheap-module-source-map',
     cache: true,
-    debug: true,
+    debug: false,
     output: {
         filename: '[name].bundle.js',
         sourceMapFilename: '[name].map',
