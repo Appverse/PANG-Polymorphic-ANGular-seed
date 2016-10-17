@@ -7,5 +7,8 @@ export let Routes = {
         params: {
             id: ':id'
         }
+    },
+    TRACKING: {
+        url: '/api/tracking'
     }
 };
