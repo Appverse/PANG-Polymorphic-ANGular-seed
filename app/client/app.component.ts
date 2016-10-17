@@ -1,22 +1,24 @@
-import {Component} from '@angular/core';
-import {Routes} from '@angular/router';
+import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
 
 // Shared service
-import {SampleService} from './services/sample.service';
+import { SampleService } from './services/sample.service';
+import { RoutingService } from './services/routing.service';
+import { TrackingService } from './services/tracking/tracking.service.tns';
 
 // Multiplatform components
-import {HomeComponent} from './pages/home/home.component';
-import {ProductsComponent} from './pages/products/products.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 
 @Component({
     moduleId: module.id,
     selector: 'pang-app',
-    providers: [SampleService],
+    providers: [SampleService, RoutingService, TrackingService],
     templateUrl: 'app.component.tns.html'
 })
 export class AppComponent {
-    constructor() {
+    constructor(private routingService: RoutingService) {
         this.hideActionBarInAndroid();
     }
 
