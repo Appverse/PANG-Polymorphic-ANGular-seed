@@ -1,6 +1,5 @@
-import * as Rx from 'rxjs';
-
 import { Config } from './app.config';
+import * as Rx from 'rxjs';
 
 export const apiManager = {
     generateApiUrl,

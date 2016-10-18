@@ -1,8 +1,7 @@
-import { Http } from '@angular/http';
-import { Routes } from '../../../common';
 import { apiManager } from '../../app.api-manager';
-import * as Rx from 'rxjs';
 import { Config } from '../../app.config';
+import { Routes } from '../../../common';
+import { Http } from '@angular/http';
 
 export abstract class TrackingServiceCommon {
 
@@ -14,7 +13,7 @@ export abstract class TrackingServiceCommon {
     public abstract submitData(route?: string): void;
 
     public sendTrackingData(...data: String[]): Promise<any> {
-        console.log('sendingTrackingData', apiManager.generateApiUrl(this.config, Routes.TRACKING.url));
+        // common code for posting tracking routes
         return this.http
             .post(apiManager.generateApiUrl(this.config, Routes.TRACKING.url), { routes: data})
             .toPromise()

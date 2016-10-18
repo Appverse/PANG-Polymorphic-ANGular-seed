@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import * as Rx from 'rxjs';
 import { apiManager } from '../app.api-manager';
 import { models, Routes } from '../../common';
+import { Injectable } from '@angular/core';
 import { Config } from '../app.config';
+import { Http } from '@angular/http';
+import * as Rx from 'rxjs';
 
 @Injectable()
 export class SampleService {

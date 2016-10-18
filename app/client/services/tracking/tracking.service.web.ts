@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { TrackingServiceCommon } from './tracking.service.common';
-import { Http } from '@angular/http';
+import { Injectable } from '@angular/core';
 import { Config } from '../../app.config';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class TrackingService extends TrackingServiceCommon {
