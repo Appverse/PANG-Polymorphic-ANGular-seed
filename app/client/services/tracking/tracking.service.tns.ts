@@ -15,7 +15,7 @@ export class TrackingService extends TrackingServiceCommon {
                 this.submitData();
                 this.receivedRoutes = [];
             }
-        }, 5000);
+        }, 60000);
     }
 
     trackRoute(route: string): void {
