@@ -4,64 +4,65 @@
 
 @import 'styles/_variables.scss';
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
 h1 {
-    color: $brand-color;
+    color: $brand-primary;
 }
 
-.button{
+.btn-outline{
     padding: 10px;
     background-color: transparent;
-    color: $brand-color;
-    border: 2px solid $brand-color;
+    color: $brand-primary;
+    border: 2px solid $btn-primary-bg;
     border-radius: 5px;
 }
 
-.button:hover{
+.btn-outline:hover{
     padding: 10px;
-    background-color: $brand-color;
-    color: $light-font;
-    border: 2px solid $brand-color;
+    background-color: $btn-primary-bg;
+    color: $gray-lightest;
+    border: 2px solid $btn-primary-bg;
     border-radius: 5px;
 }
 
-.button:active{
+.btn-outline:active{
     padding: 10px;
-    background-color: $dark-brand-color;
-    color: $light-font;
-    border: 2px solid $dark-brand-color;
+    background-color: lighten($brand-primary, 40%);
+    color: $gray-lightest;
+    border: 2px solid $btn-primary-bg;
     border-radius: 5px;
 }
 
-.button-rm{
+.btn-full{
+    padding: 10px;
+    background-color: $btn-primary-bg;
+    color: $gray-lightest;
+    border: 2px solid $btn-primary-bg;
+    border-radius: 5px;
+}
+
+.btn-full:hover{
     padding: 10px;
     background-color: transparent;
-    color: $dark-brand-color;
-    border: 2px solid $dark-brand-color;
+    color: $brand-primary;
+    border: 2px solid $btn-primary-bg;
     border-radius: 5px;
 }
 
-.button-rm:hover{
+.btn-full:active{
     padding: 10px;
-    background-color: $dark-brand-color;
-    color: $light-font;
-    border: 2px solid $dark-brand-color;
-    border-radius: 5px;
-}
-
-.button-rm:active{
-    padding: 10px;
-    background-color: $dark-bg;
-    color: $light-font;
-    border: 2px solid $dark-bg;
+    background-color: $btn-color-secondary;
+    color: $gray-lightest;
+    border: 2px solid $btn-color-secondary;
     border-radius: 5px;
 }
 
 .navbar-custom-brand{
-    background-color: $brand-color;
-    color: $light-font;
+    background-color: $brand-primary;
+    color: $gray-lightest;
     border-radius: 0;
 }
 
 .product{
-    background-color: $card-bg;
+    background-color: $gray-lighter;
 }
