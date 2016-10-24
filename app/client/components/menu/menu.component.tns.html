@@ -1,5 +1,5 @@
-<GridLayout columns="*,*" height="50">
-        <Button #homeButton col="0" [nsRouterLink]="['/home']" text="Home" [class]="isRouterLinkActive('/home') ? 'menu-button selected' : 'menu-button unselected'"></Button>
-        <Button #productsButton col="1" [nsRouterLink]="['/products']" text="Products" [class]="isRouterLinkActive('/products') ? 'menu-button selected' : 'menu-button unselected'"></Button>
+<GridLayout columns="*,*" rows="auto">
+        <Button col="0" [nsRouterLink]="['/home']" text="Home" [class]="(isRouterLinkActive('/home') ? 'selected' : 'unselected') + ' btn font-weight-bold'"></Button>
+        <Button col="1" [nsRouterLink]="['/products']" text="Products" [class]="(isRouterLinkActive('/products') ? 'selected' : 'unselected') + ' btn font-weight-bold'"></Button>
 </GridLayout>
 

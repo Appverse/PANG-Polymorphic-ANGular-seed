@@ -7,6 +7,8 @@ export let app = express();
 app.use(cors());
 configureApp(app);
 
+let receivedRoutes: Array<string> = [];
+
 let products: models.Product[] = [
             {
                 id: 1,
@@ -55,7 +57,34 @@ app.route(Routes.PRODUCT_DETAIL.url)
             res.status(404).send('No such product');
         }
     });
+app.route(Routes.TRACKING.url)
+    .post((req, res) => {
+        const routes: Array<string> = req.body.routes;
+        if (!routes) {
+            return res.status(422).send({ error: 'Invalid routes.' });
+        } else {
+            routes.forEach( route => {
+                receivedRoutes.push(route);
+            });
+            console.log('statistics', getStatistics());
+        }
+    });
 
+function getStatistics(): string {
+    let statistics = '';
+    let sum = {};
+    receivedRoutes.forEach( route => {
+        if (sum[route]) {
+            sum[route]++;
+        } else {
+            sum[route] = 1;
+        }
+    });
+    Object.keys(sum).forEach( key => {
+        statistics += key + ': ' + (sum[key] / receivedRoutes.length * 100).toFixed(2) + '% ';
+    });
+    return statistics;
+}
 
 // __________________________________________//
 /** Express specifics - nothing interesting*/
